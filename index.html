@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="content">
+        <div class="datetime">
+            <h1 id="time"></h1>
+            <h2 id="date"></h2>
+        </div>
+        <form action="https://google.de/search" method="GET">
+            <input class="search-bar" name="q" placeholder="Search with Google..." type="search" autofocus/>
+        </form>
+
+        <div class="links">
+            <ul>
+                <li>general</li>
+                <li><a href="https://youtube.com">youtube</a></li>
+                <li><a href="https://github.com/">github</a></li>
+                <li><a href="https://virustotal.com">virustotal</a></li>
+                <li><a href="https://monkeytype.com">monkeytype</a></li>
+            </ul>
+            <ul>
+                <li>reddit</li>
+                <li><a href="https://reddit.com/">home</a></li>
+                <li><a href="https://reddit.com/r/ich_iel">r/ich_iel</a></li>
+                <li><a href="https://reddit.com/r/unixporn">r/unixporn</a></li>
+                <li><a href="https://reddit.com/r/startpages">r/startpages</a></li>
+                </ul>
+            <ul>
+                <li>school</li>
+                <li><a href="https://lernplattform.mebis.bayern.de/my/">mebis</a></li>
+                <li><a href="https://trello.com/">trello</a></li>
+                <li><a href="https://lernen.phase-6.de/">phase6</a></li>
+                <li><a href="https://de.webqc.org/balance.php">webqc balance</a></li>
+            </ul>
+        </div>
+
+        <div class="controls">
+            <button onclick="pausePlayer()">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
+                </svg>
+            </button>
+            <button onclick="mutePlayer()">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.707.707L4.586 13H2a1 1 0 01-1-1V8a1 1 0 011-1h2.586l3.707-3.707a1 1 0 011.09-.217zM14.657 2.929a1 1 0 011.414 0A9.972 9.972 0 0119 10a9.972 9.972 0 01-2.929 7.071 1 1 0 01-1.414-1.414A7.971 7.971 0 0017 10c0-2.21-.894-4.208-2.343-5.657a1 1 0 010-1.414zm-2.829 2.828a1 1 0 011.415 0A5.983 5.983 0 0115 10a5.984 5.984 0 01-1.757 4.243 1 1 0 01-1.415-1.415A3.984 3.984 0 0013 10a3.983 3.983 0 00-1.172-2.828 1 1 0 010-1.415z" clip-rule="evenodd" />
+                </svg>
+            </button>
+        </div>
+        
+    </div>
+    
+    
+    <div class="video-background">
+        <div class="video-container blur-overlay">
+            <div class="myvideo" id="myvideo"></div>
+        </div>
+    </div>
+
+    
+</body>
+</html>
+
+<style>
+    body{
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    .video-container {
+        position: absolute;
+        width: 100%;
+        padding-bottom: 56.25%;   
+        pointer-events:none;
+        z-index: 0;
+    }
+
+    .controls {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin: 50px 50px;
+        margin-top: 300px;
+    }
+
+    button {
+        margin: 10px;
+        padding: 5px 10px;
+        background-color: Transparent;
+        background-repeat:no-repeat;
+        border: none;
+        cursor: pointer;
+    }
+
+    button svg {
+        width: 25px;
+        height: 25px;
+        color: white;
+    }
+
+    button svg:focus,
+    button svg:hover {
+        color: #57a7cf;
+    }
+
+    .content {
+        position: absolute;
+        z-index: 1;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        margin-top: 70px;
+    }
+
+    .blur-overlay{
+        filter: blur(10px);
+        transform: scale(1.1);
+    }
+
+    iframe{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+    }
+
+    h1, h2, p, ul {
+        color: white;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
+
+    h1 {
+        font-size: 75px;
+        letter-spacing: 3px;
+    }
+
+    h2 {
+        margin-top: 2px;
+        font-weight: 400;
+    }
+
+    li {
+        font-size: 20px;
+        padding-bottom: 3px;
+    }
+
+    .datetime {
+        margin-bottom: 30px;
+    }
+
+    .search-bar {
+        width: 550px;
+        height: 45px;
+        padding: 10px 10px;
+        border-radius: 5px;
+        border: 0px;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-size: 15px;
+    }
+
+    .links {
+        display: grid;
+        grid-row-gap: 0.7em;
+        grid-column-gap: 25px;
+        grid-template-columns: 2fr 2fr 2fr;
+        color: white;
+        padding: 50px 550px;
+        padding-top: 75px;
+    }
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 10px 0;
+      white-space: nowrap;
+      background: #EBECF0;
+      border-radius: 10px;
+    }
+
+    li:first-child {
+      font-weight: bold;
+      font-size: 23px;
+      margin-bottom: 7px;
+      color: #287eff;
+    }
+
+    li:last-child{
+        padding-bottom: 10px;
+    }
+
+    a {
+      color: rgb(104, 104, 104);
+      text-decoration: none;
+    }
+
+    a:focus,
+    a:hover {
+      color: #57a7cf;
+    }
+
+</style>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/moment.min.js"></script>
+
+<script>
+    function updateClock(){
+        var dt = new Date();
+        document.getElementById("time").innerHTML = dt.toLocaleTimeString();
+    }
+
+    function updateDate() {
+        var today = moment().format("MMMM Do YYYY")
+        document.getElementById("date").innerHTML = today;
+    }
+
+    setInterval(updateClock, 0);
+    setInterval(updateDate, 0);
+
+    var tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/player_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    var player;
+    var muted = true;
+    var playing = true;
+
+    function onYouTubePlayerAPIReady() {
+        player = new YT.Player('myvideo', {
+            playerVars: { 'autoplay': 1, 'controls': 0,'showinfo': 0, 'autohide': 1, 'playlist': "bhg76OAOSyk", 'loop': 1 },
+            videoId: "bhg76OAOSyk",
+            events: {
+            'onReady': onPlayerReady}
+        });
+    }
+
+    function onPlayerReady(event) {
+        event.target.mute();
+        console.log("player initialized");
+    }
+
+    function mutePlayer() {
+        if(muted) {
+            muted = !muted;
+            player.unMute()
+            console.log("player unmuted");
+            return;
+        }
+        
+        muted = !muted;
+        player.mute();
+        console.log("player muted.");
+        return;
+    }
+
+    function pausePlayer() {
+        if(playing) {
+            playing = !playing;
+            player.pauseVideo()
+            console.log("player paused");
+            return
+        }
+        
+        playing = !playing;
+        player.playVideo();
+        console.log("player resumed.");
+        return;
+    }
+
+</script>
