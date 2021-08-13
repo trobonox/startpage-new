@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>startpage</title>
+</head>
+<body>
+    <div class="content">
+        <div class="time" id="time"></div>
+        <div class="date" id="date"></div>
+
+        <form action="https://startpage.com/sp/search/" method="GET">
+            <input class="search-bar" name="q" placeholder="Search with Startpage..." type="search" autofocus/>
+        </form>
+
+        <div class="links">
+            <ul>
+                <li>general</li>
+                <li><a href="https://youtube.com" target="_blank" rel="noopener noreferrer">youtube</a></li>
+                <li><a href="https://reddit.com" target="_blank" rel="noopener noreferrer">reddit</a></li>
+                <li><a href="https://urlscan.io/" target="_blank" rel="noopener noreferrer">urlscan</a></li>
+                <li><a href="https://virustotal.com" target="_blank" rel="noopener noreferrer">virustotal</a></li>
+                
+            </ul>
+            <ul>
+                <li>dev</li>
+                <li><a href="https://reddit.com/" target="_blank" rel="noopener noreferrer">github</a></li>
+                <li><a href="https://reddit.com/r/ich_iel" target="_blank" rel="noopener noreferrer">discord dev</a></li>
+                <li><a href="https://reddit.com/r/unixporn" target="_blank" rel="noopener noreferrer">discord.py docs</a></li>
+                <li><a href="https://raw.githubusercontent.com/divanov11/portfolio-website/master/Flexbox%20vs.%20CSS%20Grids%20infographic.pdf" target="_blank" rel="noopener noreferrer">flexbox cheatsheet</a></li>
+                </ul>
+            <ul>
+                <li>school</li>
+                <li><a href="https://lernplattform.mebis.bayern.de/my/" target="_blank" rel="noopener noreferrer">mebis</a></li>
+                <li><a href="https://trello.com/" target="_blank" rel="noopener noreferrer">trello</a></li>
+                <li><a href="https://lernen.phase-6.de/" target="_blank" rel="noopener noreferrer">phase6</a></li>
+                <li><a href="https://de.webqc.org/balance.php" target="_blank" rel="noopener noreferrer">webqc balance</a></li>
+            </ul>
+        </div>
+
+
+        <script src="datetime.js"></script>
+    
+</body>
+</html>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+
+    body{
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        overflow: hidden;
+        background-color: rgb(22, 22, 27);
+    }
+
+    button svg:focus,
+    button svg:hover {
+        color: #57a7cf;
+    }
+
+    .content {
+        position: absolute;
+        z-index: 1;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        margin-top: 70px;
+    }
+
+
+    h1, h2, p, ul, div {
+        color: rgb(228, 228, 228);
+        font-family: 'Noto Sans', sans-serif;
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
+
+    h1 {
+        font-size: 75px;
+        letter-spacing: 3px;
+    }
+
+    h2 {
+        margin-top: 2px;
+        font-weight: 400;
+    }
+
+    li {
+        font-size: 20px;
+        padding-bottom: 3px;
+    }
+
+    .time {
+        margin-bottom: 0;
+        font-size: 5rem;
+    }
+
+    .date {
+        margin-bottom: 20px;
+        font-size: 1.2rem;
+    }
+
+    .search-bar {
+        width: 550px;
+        height: 45px;
+        padding: 10px 10px;
+        border-radius: 5px;
+        border: 0px;
+        font-size: 15px;
+        font-family: 'Noto Sans', sans-serif;
+        background-color: rgb(34, 34, 41);
+        color: rgb(209, 209, 209);
+    }
+
+    .links {
+        display: grid;
+        grid-row-gap: 0.7em;
+        grid-column-gap: 20px;
+        grid-template-columns: 0.6fr 0.6fr 0.6fr;
+        margin: 0 0.1em;
+        min-width: 24em;
+        padding: 0.5em 550px;
+        padding-top: 50px;
+    }
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 10px 0;
+      white-space: nowrap;
+      border-radius: 10px;
+      background-color: rgb(27, 27, 32);
+    }
+
+    li:first-child {
+      font-weight: bold;
+      font-size: 23px;
+      margin-bottom: 7px;
+      color: #5c9af7;
+    }
+
+    li:last-child{
+        padding-bottom: 10px;
+    }
+
+    a {
+      color: rgb(233, 233, 233);
+      text-decoration: none;
+    }
+
+    a:focus,
+    a:hover {
+      color: #57a7cf;
+    }
+
+</style>
