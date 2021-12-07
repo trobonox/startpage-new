@@ -1,0 +1,21 @@
+{
+    "manifest_version": 3,
+    "name": "Trobo's New Tab",
+    "version": "0.1.0",
+
+    "chrome_url_overrides": {
+        "newtab": "index.html"
+    },
+
+    "chrome_settings_overrides": {
+		"search_provider": {
+			"favicon_url": "https://www.startpage.com/sp/spstatic/favicons/favicon-180x180.png",
+			"is_default": true,
+			"keyword": "!s",
+			"name": "Startpage",
+			"search_url": "https://www.startpage.com/do/dsearch?query={searchTerms}&cat=web&pl=opensearch&language=english&t=blak",
+			"suggest_url": "https://www.startpage.com/cgi-bin/csuggest?query={searchTerms}&limit=10&lang=english&format=json",
+            "encoding": "UTF-8"
+		}
+	}
+}

@@ -4,15 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>startpage</title>
+    <link rel="stylesheet" href="normalize.css">
+    <title>New Tab</title>
 </head>
 <body>
+    <script src="time.js"></script>
     <div class="content">
-        <div class="time" id="time"></div>
-        <div class="date" id="date"></div>
-
-        <form action="https://startpage.com/sp/search/" method="GET">
-            <input class="search-bar" name="q" placeholder="Search with Startpage..." type="search" autofocus/>
+        <h1 id="time" class="time-display"></h1>
+        <h3 id="date" class="date-display"></h2>
+        <form action="https://www.startpage.com/do/dsearch" method="GET">
+            <input class="search-bar" name="q" placeholder="Search with Startpage..." type="search" autofocus="">
         </form>
 
         <div class="links">
@@ -22,7 +23,6 @@
                 <li><a href="https://reddit.com" target="_blank" rel="noopener noreferrer">reddit</a></li>
                 <li><a href="https://urlscan.io" target="_blank" rel="noopener noreferrer">urlscan</a></li>
                 <li><a href="https://virustotal.com" target="_blank" rel="noopener noreferrer">virustotal</a></li>
-                
             </ul>
             <ul>
                 <li>dev</li>
@@ -30,7 +30,7 @@
                 <li><a href="https://discord.com/developers" target="_blank" rel="noopener noreferrer">discord dev</a></li>
                 <li><a href="https://discordpy.readthedocs.io/en/stable/" target="_blank" rel="noopener noreferrer">discord.py docs</a></li>
                 <li><a href="https://raw.githubusercontent.com/divanov11/portfolio-website/master/Flexbox%20vs.%20CSS%20Grids%20infographic.pdf" target="_blank" rel="noopener noreferrer">flexbox cheatsheet</a></li>
-                </ul>
+            </ul>
             <ul>
                 <li>school</li>
                 <li><a href="https://lernplattform.mebis.bayern.de/my/" target="_blank" rel="noopener noreferrer">mebis</a></li>
@@ -39,124 +39,110 @@
                 <li><a href="https://de.webqc.org/balance.php" target="_blank" rel="noopener noreferrer">webqc balance</a></li>
             </ul>
         </div>
-
-
-        <script src="datetime.js"></script>
+    </div>
     
 </body>
+
 </html>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+    
+    :root {
+        --background-primary: #0e1015;
+        --background-secondary: #181a20;
+        --background-tertiary: #272d3b;
 
-    body{
-        margin: 0;
-        padding: 0;
-        height: 100vh;
-        overflow: hidden;
-        background-color: rgb(22, 22, 27);
+        --text-primary: #f1f1f1;
+        --text-secondary: #d3d3d3;
+
+        --accent-primary: #5060d6;
+        --accent-secondary: #a1a6ff;
     }
 
-    button svg:focus,
-    button svg:hover {
-        color: #57a7cf;
+    body {
+        background-color: var(--background-primary);
+        color: var(--text-primary);
+
+        font-family: "Noto Sans", sans-serif;
     }
 
-    .content {
-        position: absolute;
-        z-index: 1;
+    ul {
         display: flex;
-        justify-content: center;
         flex-direction: column;
-        width: 100%;
+        justify-content: center;
         text-align: center;
-        margin-top: 70px;
+        
+        list-style-type: none;
+        text-decoration: none;
+        background-color: var(--background-secondary);
+        margin: 0 15px;
+        padding: 20px;
+        border-radius: 10px;
+
+        width: 12%;
     }
 
-
-    h1, h2, p, ul, div {
-        color: rgb(228, 228, 228);
-        font-family: 'Noto Sans', sans-serif;
-        padding-bottom: 0;
-        margin-bottom: 0;
+    a {
+        text-decoration: none;
+        color: var(--text-primary);
     }
 
-    h1 {
-        font-size: 75px;
-        letter-spacing: 3px;
-    }
-
-    h2 {
-        margin-top: 2px;
-        font-weight: 400;
+    li:first-child {
+        font-weight: bold;
+        font-size: 1.4rem;
+        margin-bottom: 7px;
+        color: var(--accent-primary);
     }
 
     li {
-        font-size: 20px;
-        padding-bottom: 3px;
+        font-size: 1.3rem;
     }
 
-    .time {
-        margin-bottom: 0;
+    a:hover {
+        color: var(--accent-secondary);
+    }
+
+    .content {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+        margin-top: 70px;
+    }
+
+    .time-display {
         font-size: 5rem;
+        margin: 0;
+        font-weight: 400;
     }
 
-    .date {
-        margin-bottom: 20px;
-        font-size: 1.2rem;
+    .date-display {
+        font-weight: 200;
+        font-size: 1.1rem;
+        letter-spacing: 0.02rem;
+        margin: 0;
+        margin-top: 10px;
     }
 
     .search-bar {
         width: 550px;
         height: 45px;
         padding: 10px 10px;
+        margin: 35px 10px;
         border-radius: 5px;
         border: 0px;
         font-size: 15px;
-        font-family: 'Noto Sans', sans-serif;
-        background-color: rgb(34, 34, 41);
-        color: rgb(209, 209, 209);
+        background-color: var(--background-secondary);
+        color: var(--text-secondary);
+        -webkit-box-shadow: 7px 11px 37px 1px rgba(0,0,0,0.23); 
+        box-shadow: 7px 11px 37px 1px rgba(0,0,0,0.23);
     }
 
     .links {
-        display: grid;
-        grid-row-gap: 0.7em;
-        grid-column-gap: 20px;
-        grid-template-columns: 0.6fr 0.6fr 0.6fr;
-        margin: 0 0.1em;
-        min-width: 24em;
-        padding: 0.5em 550px;
-        padding-top: 50px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
     }
-
-    ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 10px 0;
-      white-space: nowrap;
-      border-radius: 10px;
-      background-color: rgb(27, 27, 32);
-    }
-
-    li:first-child {
-      font-weight: bold;
-      font-size: 23px;
-      margin-bottom: 7px;
-      color: #5c9af7;
-    }
-
-    li:last-child{
-        padding-bottom: 10px;
-    }
-
-    a {
-      color: rgb(233, 233, 233);
-      text-decoration: none;
-    }
-
-    a:focus,
-    a:hover {
-      color: #57a7cf;
-    }
-
 </style>
