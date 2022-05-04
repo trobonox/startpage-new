@@ -3,7 +3,7 @@
 Latest version of my custom new tab page, made with plain HTML, CSS and JS.
 Also includes a manifest.json for usage as a browser extension.
 
-Catppuccin-themed version coming soon.
+A catppuccin-themed version is available in index_catppuccin.html
 
 Please note that this is not really a template but rather my personal setup, so the time is being forcely displayed in my localisation format and the default search engine is set to startpage.com. Though you are free to clone this repo and edit it however you want.
 
