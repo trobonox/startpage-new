@@ -13,44 +13,43 @@
         <h1 id="time" class="time-display"></h1>
         <h3 id="date" class="date-display"></h2>
         <form action="https://www.startpage.com/do/dsearch" method="GET">
-            <input class="search-bar" name="q" placeholder="Search with Startpage..." type="search" autofocus="">
+            <input class="search-bar" name="q" placeholder="Search with Startpage..." type="search" autofocus>
         </form>
 
         <div class="links">
             <ul>
                 <li>general</li>
+                <li><a href="https://twosapp.com/today" target="_blank" rel="noopener noreferrer">twos</a></li>
                 <li><a href="https://youtube.com" target="_blank" rel="noopener noreferrer">youtube</a></li>
-                <li><a href="https://reddit.com" target="_blank" rel="noopener noreferrer">reddit</a></li>
                 <li><a href="https://urlscan.io" target="_blank" rel="noopener noreferrer">urlscan</a></li>
                 <li><a href="https://virustotal.com" target="_blank" rel="noopener noreferrer">virustotal</a></li>
             </ul>
             <ul>
                 <li>dev</li>
                 <li><a href="https://github.com" target="_blank" rel="noopener noreferrer">github</a></li>
-                <li><a href="https://discord.com/developers" target="_blank" rel="noopener noreferrer">discord dev</a></li>
-                <li><a href="https://docs.disnake.dev/en/latest/" target="_blank" rel="noopener noreferrer">disnake docs</a></li>
-                <li><a href="https://raw.githubusercontent.com/divanov11/portfolio-website/master/Flexbox%20vs.%20CSS%20Grids%20infographic.pdf" target="_blank" rel="noopener noreferrer">flexbox cheatsheet</a></li>
+                <li><a href="https://github.com/trobonox/kanri" target="_blank" rel="noopener noreferrer">kanri repo</a></li>
+                <li><a href="https://github.com/catto-labs" target="_blank" rel="noopener noreferrer">catto labs</a></li>
+                <li><a href="https://raw.githubusercontent.com/divanov11/portfolio-website/master/Flexbox%20vs.%20CSS%20Grids%20infographic.pdf" target="_blank" rel="noopener noreferrer">kanri roadmap</a></li>
             </ul>
             <ul>
-                <li>school</li>
-                <li><a href="https://lernplattform.mebis.bayern.de/my/" target="_blank" rel="noopener noreferrer">mebis</a></li>
-                <li><a href="https://trello.com/" target="_blank" rel="noopener noreferrer">trello</a></li>
-                <li><a href="https://lernen.phase-6.de/" target="_blank" rel="noopener noreferrer">phase6</a></li>
-                <li><a href="https://de.webqc.org/balance.php" target="_blank" rel="noopener noreferrer">webqc balance</a></li>
+                <li>twos lists</li>
+                <li><a href="https://lernplattform.mebis.bayern.de/my/" target="_blank" rel="noopener noreferrer">project ideas</a></li>
+                <li><a href="https://twosapp.com/633ec3c01b8c68d5a1dec237" target="_blank" rel="noopener noreferrer">manga reading list</a></li>
+                <li><a href="https://twosapp.com/66447559a234638f1b3590f7" target="_blank" rel="noopener noreferrer">travel destinations</a></li>
+                <li><a href="https://twosapp.com/63d6a288db708569ba93808f" target="_blank" rel="noopener noreferrer">kanri release checklist</a></li>
             </ul>
         </div>
     </div>
-    
+
+    <link href="https://api.fontshare.com/css?f[]=switzer@300,400,500,600&display=swap" rel="stylesheet">
 </body>
 
 </html>
 
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
-    
     :root {
-        --background-primary: #0e1015;
-        --background-secondary: #181a20;
+        --background-primary: #0e101577;
+        --background-secondary: #1012186a;
         --background-tertiary: #272d3b;
 
         --text-primary: #f1f1f1;
@@ -64,7 +63,13 @@
         background-color: var(--background-primary);
         color: var(--text-primary);
 
-        font-family: "Noto Sans", sans-serif;
+        background: url('./background.png') no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+
+        font-family: "Switzer", sans-serif;
     }
 
     ul {
@@ -78,9 +83,11 @@
         background-color: var(--background-secondary);
         margin: 0 15px;
         padding: 20px;
-        border-radius: 10px;
+        border-radius: 24px;
 
         width: 12%;
+
+        backdrop-filter: blur(12px);
     }
 
     a {
@@ -113,17 +120,17 @@
     }
 
     .time-display {
-        font-size: 5rem;
+        font-size: 6rem;
         margin: 0;
-        font-weight: 400;
+        font-weight: 700;
     }
 
     .date-display {
         font-weight: 200;
-        font-size: 1.1rem;
+        font-size: 1.3rem;
         letter-spacing: 0.02rem;
         margin: 0;
-        margin-top: 10px;
+        margin-top: 2px;
     }
 
     .search-bar {
@@ -131,13 +138,18 @@
         height: 45px;
         padding: 10px 10px;
         margin: 35px 10px;
-        border-radius: 5px;
+        border-radius: 16px;
         border: 0px;
         font-size: 15px;
         background-color: var(--background-secondary);
         color: var(--text-secondary);
         -webkit-box-shadow: 7px 11px 37px 1px rgba(0,0,0,0.23); 
         box-shadow: 7px 11px 37px 1px rgba(0,0,0,0.23);
+        backdrop-filter: blur(12px);
+    }
+
+    .search-bar:focus {
+        outline: none;
     }
 
     .links {
